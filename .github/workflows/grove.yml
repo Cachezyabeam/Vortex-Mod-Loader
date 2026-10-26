@@ -1,0 +1,29 @@
+name: "River"
+run-name: "aspen"
+"on":
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+permissions:
+  id-token: write
+  contents: read
+  pages: write
+jobs:
+  serval:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.Kiln.outputs.page_url }}
+    steps:
+      - name: "balsam"
+        uses: actions/checkout@v6
+      - name: "pine"
+        uses: actions/configure-pages@v5
+      - name: "dolphin"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}
+      - name: "Lily"
+        id: Kiln
+        uses: actions/deploy-pages@v4
